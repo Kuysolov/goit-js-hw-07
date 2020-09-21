@@ -18,16 +18,13 @@ const images = [
 
 const galleryContainerRef = document.querySelector('#gallery');
 
-const makeImages = img => {
-  return img.map(img => {
+const makeImages = image => {
+  return image.map(image => {
     const imagesContainerRef = document.createElement('li');
-
-    const imagesRef = document.createElement('img');
-    imagesRef.src = img.url;
-    imagesRef.alt = img.alt;
-    imagesRef.width = 480;
-
-    imagesContainerRef.appendChild(imagesRef);
+    imagesContainerRef.insertAdjacentHTML(
+      'afterbegin',
+      `<img src="${image.url}" alt="${image.alt}" width="480">`,
+    );
     return imagesContainerRef;
   });
 };
