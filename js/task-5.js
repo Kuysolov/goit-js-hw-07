@@ -1,7 +1,7 @@
-const unputRef = document.querySelector('input#name-input');
+const inputRef = document.querySelector('input#name-input');
 const outputRef = document.querySelector('span#name-output');
 
-unputRef.addEventListener('input', onNameOutput);
+inputRef.addEventListener('input', onNameOutput);
 
 function onNameOutput(event) {
   if (event.currentTarget.value !== '') {
