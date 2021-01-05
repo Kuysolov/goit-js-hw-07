@@ -1,10 +1,18 @@
-const categoriesRef = document.querySelector('#categories');
+const itemsRef = document.querySelectorAll('.item')
+console.log(`В списке ${itemsRef.length} категории.`)
 
-console.log(`В списке ${categoriesRef.children.length} категории.`);
+// const categoriesList = document.querySelector('#categories').children
+// console.log(`В списке ${categoriesList.length} категории.`)
 
-const itemRef = document.querySelectorAll('.item');
+// for (let i = 0; i < itemLiRef.length; i += 1) { 
+//   const titleCategories = itemLiRef[i].querySelector('h2').textContent;
+//   const amountSubCategories = itemLiRef[i].querySelectorAll('li').length;
+// console.log(`Категория: ${titleCategories}\nКоличество элементов: ${amountSubCategories}`)
 
-itemRef.forEach(item => {
-  console.log(`Категория: ${item.firstElementChild.textContent}`);
-  console.log(`Количество элементов: ${item.lastElementChild.children.length}`);
-});
+// }
+
+itemsRef.forEach(item => { 
+    const titleCategory = item.querySelector("h2").textContent;
+    const amountCategoryElements = item.querySelector("ul").children.length;
+console.log(`Категория: ${titleCategory}\nКоличество элементов: ${amountCategoryElements}`)
+})

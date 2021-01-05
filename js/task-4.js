@@ -19,3 +19,14 @@ function onDecrementClick(event) {
   counterValue -= 1;
   valueRef.textContent = counterValue;
 }
+
+ 
+// function onIncrementClick(event) { 
+//   const counterValue = Number(valueRef.textContent)
+//    valueRef.textContent = counterValue + 1
+// }
+
+// function onDecrementClick(event) { 
+//   const counterValue = valueRef.textContent
+//    valueRef.textContent = counterValue - 1
+// }

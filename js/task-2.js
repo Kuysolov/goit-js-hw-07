@@ -7,16 +7,49 @@ const ingredients = [
   'Приправы',
 ];
 
-const ingredientsContainerRef = document.querySelector('#ingredients');
+const ingridientsRef = document.querySelector('#ingredients')
+// console.log(ingridientsRef)
 
-const makeElements = item => {
-  return item.map(item => {
-    const ingredientsItem = document.createElement('li');
-    ingredientsItem.textContent = item;
-    return ingredientsItem;
-  });
-};
+// const elements = []
+// for (let i = 0; i < ingredients.length; i += 1) { 
+//   // const item = ingredients[i];
+//   const liElement = document.createElement('li');
+//   liElement.textContent = ingredients[i];
+//   elements.push(liElement)
+//   }
+// console.log(ingridientsRef)
 
-const elements = makeElements(ingredients);
-ingredientsContainerRef.append(...elements);
-console.log(ingredientsContainerRef);
+// ingridientsRef.append(...elements)
+// --------------------------------------------------------
+  
+// const elements = ingredients.map(ingredient => { 
+//   const liElement = document.createElement('li');
+//   liElement.textContent = ingredient;
+//   return liElement
+// })
+  
+// ingridientsRef.append(...elements)
+// --------------------------------------------------------
+
+
+// const createIngredientsElements = ingredients => {
+// return ingredients.map(ingredient => { 
+//   const liElement = document.createElement('li');
+//   liElement.textContent = ingredient;
+//   return liElement
+  
+// })
+// }
+// const elements = createIngredientsElements(ingredients);
+// ingridientsRef.append(...elements)
+// ---------------------------------------------------------
+
+const createIngredientsElement = ingredient => { 
+  const liElement = document.createElement('li');
+  liElement.textContent = ingredient;
+  return liElement
+}
+ 
+const elements = ingredients.map(createIngredientsElement)
+
+ingridientsRef.append(...elements)

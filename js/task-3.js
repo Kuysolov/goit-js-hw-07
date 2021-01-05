@@ -16,19 +16,27 @@ const images = [
   },
 ];
 
-const galleryContainerRef = document.querySelector('#gallery');
+const galleryRef = document.querySelector('#gallery')
 
-const makeImages = image => {
-  return image.map(image => {
-    const imagesContainerRef = document.createElement('li');
-    imagesContainerRef.insertAdjacentHTML(
-      'afterbegin',
-      `<img src="${image.url}" alt="${image.alt}" width="480">`,
-    );
-    return imagesContainerRef;
-  });
-};
+const createGalleryElement = ({ url, alt }) => { 
+  return `<li><img src = '${url}' alt = '${alt}' width = '240'></li> `
+  }
 
-const elements = makeImages(images);
-galleryContainerRef.append(...elements);
-console.log(galleryContainerRef);
+const elements = images.map(createGalleryElement).join('')
+galleryRef.insertAdjacentHTML('beforeend', elements)
+
+
+// const makeImages = image => {
+//   return image.map(image => {
+//     const imagesContainerRef = document.createElement('li');
+//     imagesContainerRef.insertAdjacentHTML(
+//       'afterbegin',
+//       `<img src="${image.url}" alt="${image.alt}" width="480">`,
+//     );
+//     return imagesContainerRef;
+//   });
+// };
+
+// const elements = makeImages(images);
+// galleryContainerRef.append(...elements);
+// console.log(galleryContainerRef);
